@@ -1,7 +1,7 @@
 Two Scoops of Django 1.8 Change List
 =====================================
 
-*note*: This is a work in progress and does not necessarily reflect the current status of Two Scoops of Django 1.8.
+**Warning: This is a work in progress and does not necessarily reflect the current status of Two Scoops of Django 1.8.**
 
 * Various grammar mistakes have been corrected
 
