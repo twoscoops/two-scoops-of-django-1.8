@@ -1,6 +1,8 @@
 Two Scoops of Django 1.8 Change List
 =====================================
 
+*note*: This is a work in progress and does not necessarily reflect the current status of Two Scoops of Django 1.8.
+
 * Various grammar mistakes have been corrected
 
 * Removed references to django.views.defaults.shortcut and django.conf.urls.shortcut
