@@ -28,6 +28,7 @@ Two Scoops of Django 1.8 Change List
 * Chapter: Forms
 
   * django.forms.Field.has_changed() instead of django.forms.Field._has_changed()
+  * Added example of using forms to validate incoming non-Web data
  
 * Templates:
 
