@@ -7,11 +7,21 @@ Two Scoops of Django 1.8 Change List
 
 * Removed references to django.views.defaults.shortcut and django.conf.urls.shortcut
 
-* Chapter: Setup
+* Chapter: Coding Style
+
+  * JS style guides
+  
+  * JS style checker packages
+  
+  * HTML/CSS style guides
+  
+  * CSS style checker packages
+
+* Chapter: The Ultimate Django Environment Setup
 
   * Added virtalenvwrapper-win for windows
 
-* Chapter: Project Layout
+* Chapter: How to Lay Out Django Projects
 
   * Cookiecutter-django for default project layout
  
@@ -23,23 +33,46 @@ Two Scoops of Django 1.8 Change List
 
   * Removed South mentions
   
-* Chapter: PostgresSQL (NEW)
+  * Added Postgres fields
+  
+  * Break out queries and database interactions into their own chapter
+  
+* Chapter (New): Queries and the Database
 
- * Postgres-specific fields and widgets, validators, hstore support (in progress)
+  * Added database functions
+  * Added try/except issues and exceptions to use.
 
 * Chapter: Function- and Class-Based Views
 
   *  Warned against use of dotted paths in URL definitions
- 
-* Chapter: Forms
+
+* Chapter (new): Form Fundamentals
+
+  * Moved 'more forms' to be the basics of things to do with forms
+  
+  * Now explicitly instructing to use forms for all incoming data
+  
+  * Added mention of ModelForms for non-web data
+  
+  * Added mention fields without pre-made widgets
+
+* Chapter: Forms and Class-Based Views
 
   * django.forms.Field.has_changed() instead of django.forms.Field._has_changed()
   
-  * Added example of using forms to validate incoming non-Web data
- 
 * Chapter: Templates
 
   * Mention use of Jinja2
+
+* Chapter: Django and Jinja2
+
+  * Using default filters in Jinja2
+  
+  * Replacing the need for context_processors with middleware.
+  
+  * Address CSRF usage.
+  
+  * The static nature of the Jinja2 Environment class.
 
 * Chapter: Admin
 
