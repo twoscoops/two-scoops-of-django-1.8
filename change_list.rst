@@ -20,6 +20,8 @@ Two Scoops of Django 1.8 Change List
 * Chapter: The Ultimate Django Environment Setup
 
   * Added virtalenvwrapper-win for windows
+  
+  * Merged in the chapter on Identical Environments
 
 * Chapter: How to Lay Out Django Projects
 
@@ -73,14 +75,40 @@ Two Scoops of Django 1.8 Change List
   * Address CSRF usage.
   
   * The static nature of the Jinja2 Environment class.
+  
+* Chapter: Rest API
+
+  * Added 410 methods
+  
+  * Mention Service-Oriented Architecture
+  
+  * Promoting your API
+  
+  * Create SDKs for API integrators
 
 * Chapter: Admin
 
- * @admin.register decorator
+  * @admin.register decorator
+  
+  * Corrected our advice for __str__ or __unicode__.
+  
+* Chapter: Third-Party Packages
+
+  * Pointed at Audrey's project release checklist
+  
+  * Advocate use of cookiecutter for jumpstarting projects
+  
+  * Suggested appveyor for getting Windows users of projects
 
 * Chapter: Security
 
   * Fix borked security link
+  
+* Chapter: Testing
+
+ * Tricks for using Request Factory
+ 
+ *  Quick intro to using Mock
 
 * Chapter: debugging (NEW)
 
@@ -92,7 +120,15 @@ Two Scoops of Django 1.8 Change List
 
 * Chapter: Deployment
 
+  * Added high level instructions for starting from scratch
+
   * Really, really don't use mod_python
+
+  * Removed suggested practices for Salt and Ansible. They are out of scope for this book and the content changes too quickly.
+  
+* Chapter: Identical Environments
+
+  * Merged into the The Ultimate Django Environment Setup chapter
   
 * Chapter: Continuous Integration
 
