@@ -104,11 +104,23 @@ Two Scoops of Django 1.8 Change List
 
   * Fix borked security link
   
+  * Additional HSTS warnings
+  
+  * More warnings for Session cookies.
+  
+  * Mentioned Two-Factor Auth
+  
 * Chapter: Testing
 
- * Tricks for using Request Factory
+  * Tricks for using Request Factory
  
- *  Quick intro to using Mock
+  * Quick intro to using Mock
+ 
+  * Described integration tests
+ 
+* Chapter: Utilities
+
+  * Mentioned deprecation and danger of using remove_tags
 
 * Chapter: debugging (NEW)
 
