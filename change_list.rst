@@ -7,6 +7,10 @@ Two Scoops of Django 1.8 Change List
 
 * Removed references to django.views.defaults.shortcut and django.conf.urls.shortcut
 
+* Introduction
+
+  * Added clarity to section on Fat Models, Thin Views, Helper functions, and stupid templates
+
 * Chapter: Coding Style
 
   * JS style guides
@@ -30,14 +34,26 @@ Two Scoops of Django 1.8 Change List
   * Use config for root config directory of project
   
   * Added Kevin Xu's fork of Two Scoops Project project.
+  
+* Chapter: Django apps
+
+  * Explained conventions for naming modules
  
-* Chapter: Database
+* Chapter: Models
 
   * Removed South mentions
   
   * Added Postgres fields
   
-  * Break out queries and database interactions into their own chapter
+  * Recommended against use of generic relations. Truth: Great for the implementor, never ends well for the maintainer. :(
+  
+  * Lazy Evaluation!
+  
+  * Mentioned _meta
+  
+  * Discussed Fat models, how to make them and how to avoid the god class anti-pattern
+  
+  * Broke out queries and database interactions into their own chapter
   
 * Chapter (New): Queries and the Database
 
@@ -57,6 +73,8 @@ Two Scoops of Django 1.8 Change List
   * Added mention of ModelForms for non-web data
   
   * Added mention fields without pre-made widgets
+  
+  * Moved some material from security chapter to this chapter
 
 * Chapter: Forms and Class-Based Views
 
@@ -110,13 +128,19 @@ Two Scoops of Django 1.8 Change List
   
   * Mentioned Two-Factor Auth
   
+  * Moved some content to forms chapter
+  
 * Chapter: Testing
 
-  * Tricks for using Request Factory
+  * Tricks for using Request Factory. Like example of request middleware having a session attached.
  
   * Quick intro to using Mock
  
   * Described integration tests
+  
+* Chapter: Third Party Packages
+
+  * Refactored how we describe broad version requirements
  
 * Chapter: Utilities
 
@@ -145,3 +169,22 @@ Two Scoops of Django 1.8 Change List
 * Chapter: Continuous Integration
 
   * Added AppVeyor
+  
+* Chapter: Debugging (new)
+
+  * PDB/IPDB
+  
+  * Django-debug-toolbar: Just in case it isn't being used yet
+  
+  * Reminder about annoying ALLOWED_HOSTS in deployments
+  
+  * Common CBV error debugging trick
+  
+* Appendix: Resources
+
+  * Added new stuff
+
+  * Removed stuff that is out of date
+  
+  
+  
