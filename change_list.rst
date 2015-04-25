@@ -3,7 +3,7 @@ Two Scoops of Django 1.8 Change List
 
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
 
-General:
+* General:
 
   * Bumped up version to Django 1.8 everywhere applicable
 
