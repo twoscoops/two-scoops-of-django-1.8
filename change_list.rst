@@ -3,9 +3,13 @@ Two Scoops of Django 1.8 Change List
 
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
 
-* Various grammar mistakes have been corrected
+General:
 
-* Removed references to django.views.defaults.shortcut and django.conf.urls.shortcut
+  * Bumped up version to Django 1.8 everywhere applicable
+
+  * Various grammar mistakes have been corrected
+
+  * Removed references to django.views.defaults.shortcut and django.conf.urls.shortcut
 
 * Introduction
 
@@ -55,16 +59,17 @@ Two Scoops of Django 1.8 Change List
   
   * Broke out queries and database interactions into their own chapter
   
-* Chapter (New): Queries and the Database
+* Chapter: Queries and the Database (NEW)
 
   * Added database functions
+  
   * Added try/except issues and exceptions to use.
 
 * Chapter: Function- and Class-Based Views
 
   *  Warned against use of dotted paths in URL definitions
 
-* Chapter (new): Form Fundamentals
+* Chapter: Form Fundamentals (NEW)
 
   * Moved 'more forms' to be the basics of things to do with forms
   
@@ -146,14 +151,6 @@ Two Scoops of Django 1.8 Change List
 
   * Mentioned deprecation and danger of using remove_tags
 
-* Chapter: debugging (NEW)
-
-  * Context processor for debugging (thanks @simonw)
-  
-  * feature flags (again thanks @simonw)
-  
-  * PDB/IPDB
-
 * Chapter: Deployment
 
   * Added high level instructions for starting from scratch
@@ -179,6 +176,10 @@ Two Scoops of Django 1.8 Change List
   * Reminder about annoying ALLOWED_HOSTS in deployments
   
   * Common CBV error debugging trick
+
+  * Context processor for debugging (thanks @simonw)
+  
+  * feature flags (again thanks @simonw)
   
 * Appendix: Resources
 
