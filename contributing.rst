@@ -5,7 +5,7 @@ Before You Submit an Issue
 * Be honest.
 * Check the other issues, open_ and closed_, to see if this issue already exists.
 * Please identify each issue by page number, chapter, and section/subsection numbers.
-* For tracking and credit purposes, each request for correction needs to be in it's own issue. If an issue contains 2 or more issues, we'll close it with a request for breaking up into more atomic issues.
+* For tracking and credit purposes, **each request for correction needs to be in it's own issue. If an issue contains 2 or more issues, we'll close it with a request for breaking up into more atomic issues.**
 
 **Editorial Note:** In order to make issues more readily searchable, we will alter titles and descriptions of issues as needed.
 
