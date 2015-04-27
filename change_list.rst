@@ -139,7 +139,7 @@ Two Scoops of Django 1.8 Change List
   
   * Suggested appveyor for getting Windows users of projects
   
- * Chapter: Testing
+* Chapter: Testing
 
   * Tricks for using Request Factory. Like example of request middleware having a session attached.
  
