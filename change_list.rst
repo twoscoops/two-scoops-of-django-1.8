@@ -10,6 +10,10 @@ Two Scoops of Django 1.8 Change List
   * Various grammar mistakes have been corrected
 
   * Removed references to django.views.defaults.shortcut and django.conf.urls.shortcut
+  
+  * Moved lists of tables/figures to the back
+  
+  * Longer chapter, section, subsection and box titles now break more aesthetically on their pages.
 
 * Introduction
 
@@ -105,9 +109,21 @@ Two Scoops of Django 1.8 Change List
   
   * Mention Service-Oriented Architecture
   
+  * Rate limiting APIs
+  
   * Promoting your API
   
   * Create SDKs for API integrators
+  
+  * Some material on Service Oriented Architecture
+  
+* Consuming REST APIs (our kinda JavaScript chapter)
+
+  * Remind the reader that JavaScripty stuff changes too fast.
+
+  * Mention react
+  
+  * Switch from Grunt to Gulp
 
 * Chapter: Admin
 
