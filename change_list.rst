@@ -138,6 +138,24 @@ Two Scoops of Django 1.8 Change List
   * Advocate use of cookiecutter for jumpstarting projects
   
   * Suggested appveyor for getting Windows users of projects
+  
+ * Chapter: Testing
+
+  * Tricks for using Request Factory. Like example of request middleware having a session attached.
+ 
+  * Quick intro to using Mock
+ 
+  * Described integration tests
+  
+* Chapter: Documentation
+
+  * Pandoc for converting long README.md to long README.rst
+
+* Chapter: Bottleneckes
+
+  * Added Silk profiling project
+  
+  * Recommended Lincoln Loop's High Performance Django
 
 * Chapter: Security
 
@@ -151,14 +169,6 @@ Two Scoops of Django 1.8 Change List
   
   * Moved some content to forms chapter
   
-* Chapter: Testing
-
-  * Tricks for using Request Factory. Like example of request middleware having a session attached.
- 
-  * Quick intro to using Mock
- 
-  * Described integration tests
-  
 * Chapter: Third Party Packages
 
   * Refactored how we describe broad version requirements
@@ -166,6 +176,8 @@ Two Scoops of Django 1.8 Change List
 * Chapter: Utilities
 
   * Mentioned deprecation and danger of using remove_tags
+  
+  * Added awesome-slugify
 
 * Chapter: Deployment
 
