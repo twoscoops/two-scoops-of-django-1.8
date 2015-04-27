@@ -51,6 +51,8 @@ Two Scoops of Django 1.8 Change List
 
   * Removed South mentions
   
+  * Added content for django.db.migrations
+  
   * Added Postgres fields
   
   * Recommended against use of generic relations. Truth: Great for the implementor, never ends well for the maintainer. :(
