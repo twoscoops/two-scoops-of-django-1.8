@@ -1,4 +1,4 @@
-Two Scoops of Django: Best Practices for Django 1.8
+Two Scoops of Django 1.8
 ===================================================
 
 Tracking thoughts and feature requests for the just-released `Two Scoops of Django 1.8`_ in the issue tracker. And the book's code examples are here.
