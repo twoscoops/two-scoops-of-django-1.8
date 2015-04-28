@@ -1,0 +1,2 @@
+$ export SOME_SECRET_KEY=1c3-cr3am-15-yummy
+$ export AUDREY_FREEZER_KEY=y34h-r1ght-d0nt-t0uch-my-1c3-cr34m

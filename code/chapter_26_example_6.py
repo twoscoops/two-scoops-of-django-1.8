@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -25,4 +26,16 @@ example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
 Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# core/utils.py
+from django.core.exceptions import MultipleObjectsReturned
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import PermissionDenied
+
+def get_object_or_403(model, **kwargs):
+    try:
+        return model.objects.get(**kwargs)
+    except ObjectDoesNotExist:
+        raise PermissionDenied
+    except MultipleObjectsReturned:
+        raise PermissionDenied

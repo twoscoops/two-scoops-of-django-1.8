@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,33 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# profiles/models.py
+
+from django.conf import settings
+from django.db import models
+
+from flavors.models import Flavor
+
+class EaterProfile(models.Model):
+
+    # Default user profile
+    # If you do this you need to either have a post_save signal or
+    #     redirect to a profile_edit view on initial login.
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    favorite_ice_cream = models.ForeignKey(Flavor, null=True, blank=True)
+
+class ScooperProfile(models.Model):
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    scoops_scooped = models.IntegerField(default=0)
+
+class InventorProfile(models.Model):
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    flavors_invented = models.ManyToManyField(Flavor, null=True, blank=True)
+
+

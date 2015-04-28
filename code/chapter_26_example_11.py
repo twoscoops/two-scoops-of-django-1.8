@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -25,4 +26,17 @@ example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
 Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# json_encoding_example.py
+import json
+
+from django.core.serializers.json import DjangoJSONEncoder
+from django.utils import timezone
+
+data = {"date": timezone.now()}
+
+# If you don't add the DjangoJSONEncoder class then
+# the json library will throw a TypeError.
+json_data = json.dumps(data, cls=DjangoJSONEncoder)
+
+print(json_data)

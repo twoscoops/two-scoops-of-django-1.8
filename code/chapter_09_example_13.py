@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,34 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render, redirect
+from django.views.generic import View
+
+from braces.views import LoginRequiredMixin
+
+from .forms import FlavorForm
+from .models import Flavor
+
+class FlavorView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        # Handles display of the Flavor object
+        flavor = get_object_or_404(Flavor, pk=kwargs['slug'])
+        return render(request,
+            "flavors/flavor_detail.html",
+                {"flavor": flavor}
+            )
+
+    def post(self, request, *args, **kwargs):
+        # Handles updates of the Flavor object
+        flavor = get_object_or_404(Flavor, pk=kwargs['slug'])
+        form = FlavorForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("flavors:detail", flavor.slug)
+

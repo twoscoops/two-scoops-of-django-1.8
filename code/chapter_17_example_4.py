@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,30 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+from django.contrib import admin
+from django.core.urlresolvers import reverse
+from django.utils.html import format_html
+
+from icecreambars.models import IceCreamBar
+
+class IceCreamBarAdmin(admin.ModelAdmin):
+
+    list_display = ("name", "shell", "filling",)
+    readonly_fields = ("show_url",)
+
+    def show_url(self, instance):
+        url = reverse("ice_cream_bar_detail",
+                    kwargs={"pk": instance.pk})
+        response = format_html("""<a href="{0}">{1}</a>""", url, url)
+        return response
+
+    show_url.short_description = "Ice Cream Bar URL"
+    # Displays HTML tags
+    # Never set allow_tags to True against user submitted data!!!
+    show_url.allow_tags = True
+
+admin.site.register(IceCreamBar, IceCreamBarAdmin)

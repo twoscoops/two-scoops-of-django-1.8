@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,26 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# sprinkles/decorators.py
+from functools import wraps
+
+from . import utils
+
+# based off the decorator template from Example 8.5
+def check_sprinkles(view_func):
+    """Check if a user can add sprinkles"""
+    @wraps(view_func)
+    def new_view_func(request, *args, **kwargs):
+        # Act on the request object with utils.can_sprinkle()
+        request = utils.can_sprinkle(request)
+
+        # Call the view function
+        response = view_func(request, *args, **kwargs)
+
+        # Return the HttpResponse object
+        return response
+    return new_view_func

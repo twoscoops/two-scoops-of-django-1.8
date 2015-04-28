@@ -1,0 +1,4 @@
+# requirements for django-blarg
+
+Django>=1.5,<1.9
+requests>=1.2.3,<=2.6.0

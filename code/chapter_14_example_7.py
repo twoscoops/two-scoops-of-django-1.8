@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,26 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# core/apiv1_shutdown.py
+from django.http import HttpResponseGone
+
+apiv1_gone_msg = """APIv1 was removed on April 2, 2015. Please switch to APIv3:
+<ul>
+    <li>
+        <a href="https://www.example.com/api/v3/">APIv3 Endpoint</a>
+    </li>
+    <li>
+        <a href="https://example.com/apiv3_docs/">APIv3 Documentation</a>
+    </li>
+    <li>
+        <a href="http://example.com/apiv1_shutdown/">APIv1 shut down notice</a>
+    </li>
+</ul>
+"""
+
+def apiv1_gone(request):
+    return HttpResponseGone(apiv1_gone_msg)

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,34 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+import mock
+import unittest
+
+import icecreamapi
+
+from flavors.exceptions import CantListFlavors
+from flavors.utils import list_flavors_sorted
+
+class TestIceCreamSorting(unittest.TestCase):
+
+    # Set up monkeypatch of icecreamapi.get_flavors()
+    @mock.patch.object(icecreamapi, "get_flavors")
+    def test_flavor_sort(self, get_flavors):
+        # Instructs icecreamapi.get_flavors() to return an unordered list.
+        get_flavors.return_value = ['chocolate', 'vanilla', 'strawberry', ]
+
+        # list_flavors_sorted() calls the icecreamapi.get_flavors()
+        #   function. Since we've monkeypatched the function,  it will always
+        #   return ['chocolate', 'strawberry', 'vanilla', ]. Which the.
+        #   list_flavors_sorted() will sort alphabetically
+        flavors = list_flavors_sorted()
+
+        self.assertEqual(
+            flavors,
+            ['chocolate', 'strawberry', 'vanilla', ]
+
+        )

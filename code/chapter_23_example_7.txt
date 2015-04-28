@@ -1,0 +1,2 @@
+$ heroku maintenance:on
+Enabling maintenance mode for myapp... done

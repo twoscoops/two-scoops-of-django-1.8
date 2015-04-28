@@ -1,0 +1,13 @@
+twoscoopspress$ python discounts/manage.py runserver 8001
+Starting development server at http://127.0.0.1:8001/
+Quit the server with CONTROL-C.
+
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/python/lib/python2.7/site-packages/django/core/handlers/base.py",
+        line 132, in get_response response = wrapped_callback(request,
+        *callback_args, **callback_kwargs)
+  File "/Users/python/lib/python2.7/site-packages/django/utils/decorators.py",
+        line 145, in inner
+    return func(*args, **kwargs)
+TypeError: __init__() takes exactly 1 argument (2 given)

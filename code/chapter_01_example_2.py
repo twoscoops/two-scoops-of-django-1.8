@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -25,4 +26,16 @@ example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
 Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# cones/views.py
+from __future__ import absolute_import
+from django.views.generic import CreateView
+
+# Relative imports of the 'cones' package
+from .models import WaffleCone
+from .forms import WaffleConeForm
+from core.views import FoodMixin
+
+class WaffleConeCreateView(FoodMixin, CreateView):
+    model = WaffleCone
+    form_class = WaffleConeForm 

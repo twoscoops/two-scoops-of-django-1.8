@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,19 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+    # attach this code to the previous example (9.7)
+    def clean(self):
+        cleaned_data = super(IceCreamOrderForm, self).clean()
+        slug = cleaned_data.get("slug", "")
+        toppings = cleaned_data.get("toppings", "")
+
+        # Silly "too much chocolate" validation example
+        if u"chocolate" in slug.lower() and \
+               u"chocolate" in toppings.lower():
+            msg = u"Your order has too much chocolate."
+            raise forms.ValidationError(msg)
+        return cleaned_data

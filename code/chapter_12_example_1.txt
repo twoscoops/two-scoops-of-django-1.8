@@ -1,0 +1,5 @@
+templates/
+    base.html
+    ... (other sitewide templates in here)
+    freezers/
+        ("freezers" app templates in here)

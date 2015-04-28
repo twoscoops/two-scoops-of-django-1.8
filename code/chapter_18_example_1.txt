@@ -1,0 +1,9 @@
+# Stock user model definition
+>>> from django.contrib.auth import get_user_model
+>>> get_user_model()
+<class 'django.contrib.auth.models.User'>
+
+# When the project has a custom user model definition
+>>> from django.contrib.auth import get_user_model
+>>> get_user_model()
+<class 'profiles.models.UserProfile'>

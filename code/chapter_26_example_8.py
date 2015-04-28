@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -25,4 +26,9 @@ example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
 Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# urls.py
+
+# This demonstrates the use of a custom permission denied view. The default
+# view is django.views.defaults.permission_denied
+handler403 = 'core.views.permission_denied_view'

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,34 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# tastings/urls.py
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+    url(
+        regex=r"^$",
+        view=views.TasteListView.as_view(),
+        name="list"
+    ),
+    url(
+        regex=r"^(?P<pk>\d+)/$",
+        view=views.TasteDetailView.as_view(),
+        name="detail"
+    ),
+    url(
+        regex=r"^(?P<pk>\d+)/results/$",
+        view=views.TasteResultsView.as_view(),
+        name="results"
+    ),
+    url(
+        regex=r"^(?P<pk>\d+)/update/$",
+        view=views.TasteUpdateView.as_view(),
+        name="update"
+    )
+]

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,32 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# At the top of settings/base.py
+from os.path import join, abspath, dirname
+
+here = lambda *dirs: join(abspath(dirname(__file__)), *dirs)
+BASE_DIR = here("..", "..")
+root = lambda *dirs: join(abspath(BASE_DIR), *dirs)
+
+# Configuring MEDIA_ROOT
+MEDIA_ROOT = root("media")
+
+# Configuring STATIC_ROOT
+STATIC_ROOT = root("collected_static")
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    root("assets"),
+)
+
+# Configuring TEMPLATE_DIRS
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        DIRS = (root("templates"),)
+    },
+]

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -25,4 +26,18 @@ example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
 Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# Stdlib imports
+from __future__ import absolute_import
+from math import sqrt
+from os.path import abspath
+
+# Core Django imports
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+
+# Third-party app imports
+from django_extensions.db.models import TimeStampedModel
+
+# Imports from your apps
+from splits.models import BananaSplit

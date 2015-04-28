@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,37 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# flavors/models.py
+import json
+
+from django.contrib import messages
+from django.core import serializers
+
+from core.models import ModelFormFailureHistory
+
+class FlavorActionMixin(object):
+
+    @property
+    def success_msg(self):
+        return NotImplemented
+
+    def form_valid(self, form):
+        messages.info(self.request, self.success_msg)
+        return super(FlavorActionMixin, self).form_valid(form)
+
+    def form_invalid(self, form):
+        """Save invalid form and model data for later reference."""
+        form_data = json.dumps(form.cleaned_data)
+        model_data = serializers.serialize("json",
+                    [form.instance])[1:-1]
+        ModelFormFailureHistory.objects.create(
+            form_data=form_data,
+            model_data=model_data
+        )
+        return super(FlavorActionMixin,
+                    self).form_invalid(form)
+

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,46 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# events/models.py
+from django.conf import settings
+from django.core.mail import mail_admins
+from django.db import models
+
+from model_utils.models import TimeStampedModel
+
+from .managers import EventManager
+
+class Event(TimeStampedModel):
+
+    STATUS_UNREVIEWED, STATUS_REVIEWED = (0, 1)
+    STATUS_CHOICES = (
+        (STATUS_UNREVIEWED, "Unreviewed"),
+        (STATUS_REVIEWED, "Reviewed"),
+    )
+
+    title = models.CharField(max_length=100)
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    status = models.IntegerField(choices=STATUS_CHOICES,
+                                    default=STATUS_UNREVIEWED)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL)
+
+    objects = EventManager()
+
+    def notify_admins(self):
+        # create the subject and message
+        subject = "{user} submitted a new event!".format(
+                        user=self.creator.get_full_name())
+        message = """TITLE: {title}
+START: {start}
+END: {end}""".format(title=self.title, start=self.start,
+                        end=self.end)
+
+        # Send to the admins!
+        mail_admins(subject=subject,
+            message=message,
+            fail_silently=False)

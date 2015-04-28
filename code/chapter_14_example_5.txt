@@ -1,0 +1,4 @@
+api/flavors/ # GET, POST
+api/flavors/:slug/ # GET, PUT, DELETE
+api/users/ # GET, POST
+api/users/:slug/ # GET, PUT, DELETE

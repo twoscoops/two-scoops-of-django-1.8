@@ -1,0 +1,5 @@
+>>> from reviews.models import FlavorReview
+>>> FlavorReview.objects.count()
+35
+>>> FlavorReview.objects.published().count()
+31

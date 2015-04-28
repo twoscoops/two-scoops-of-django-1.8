@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,30 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# vouchers/managers.py
+from django.utils import timezone
+
+from dateutil.relativedelta import relativedelta
+
+from django.db import models
+
+class VoucherManager(models.Manager):
+    def age_breakdown(self):
+        """Returns a dict of age brackets/counts."""
+        age_brackets = []
+        now = timezone.now()
+
+        delta = now - relativedelta(years=18)
+        count = self.model.objects.filter(birth_date__gt=delta).count()
+        age_brackets.append(
+            {"title": "0-17", "count": count}
+        )
+        count = self.model.objects.filter(birth_date__lte=delta).count()
+        age_brackets.append(
+            {"title": "18+", "count": count}
+        )
+        return age_brackets

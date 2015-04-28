@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,40 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# flavors/views.py
+
+from django.contrib import messages
+from django.views.generic import CreateView, UpdateView, DetailView
+
+from braces.views import LoginRequiredMixin
+
+from .models import Flavor
+
+class FlavorActionMixin(object):
+
+    fields = ('title', 'slug', 'scoops_remaining')
+
+    @property
+    def success_msg(self):
+        return NotImplemented
+
+    def form_valid(self, form):
+        messages.info(self.request, self.success_msg)
+        return super(FlavorActionMixin, self).form_valid(form)
+
+class FlavorCreateView(LoginRequiredMixin, FlavorActionMixin,
+                        CreateView):
+    model = Flavor
+    success_msg = "Flavor created!"
+
+class FlavorUpdateView(LoginRequiredMixin, FlavorActionMixin,
+                        UpdateView):
+    model = Flavor
+    success_msg = "Flavor updated!"
+
+class FlavorDetailView(DetailView):
+    model = Flavor

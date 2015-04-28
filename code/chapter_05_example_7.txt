@@ -1,0 +1,9 @@
+settings/
+    __init__.py
+    base.py
+    dev_audreyr.py
+    dev_pydanny.py
+    local.py
+    staging.py
+    test.py
+    production.py

@@ -1,0 +1,7 @@
+# requirements.txt for the mythical web site 'icecreamratings.com'
+Django==1.8
+requests==2.6.0
+django−blarg==1.0
+
+# Note that unlike the django−blarg library , we explicitly pin
+# the requirements so we have total control over the environment

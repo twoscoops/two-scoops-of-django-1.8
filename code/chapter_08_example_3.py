@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,42 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# sprinkles/views.py
+
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
+
+from .utils import check_sprinkles
+from .models import Sprinkle
+
+def sprinkle_list(request):
+    """Standard list view"""
+
+    request = check_sprinkles(request)
+
+    return render(request,
+        "sprinkles/sprinkle_list.html",
+        {"sprinkles": Sprinkle.objects.all()})
+
+def sprinkle_detail(request, pk):
+    """Standard detail view"""
+
+    request = check_sprinkles(request)
+
+    sprinkle = get_object_or_404(Sprinkle, pk=pk)
+
+    return render(request, "sprinkles/sprinkle_detail.html",
+        {"sprinkle": sprinkle})
+
+def sprinkle_preview(request):
+    """"preview of new sprinkle, but without the
+            check_sprinkles function being used.
+    """
+    sprinkle = Sprinkle.objects.all()
+    return render(request,
+        "sprinkles/sprinkle_preview.html",
+        {"sprinkle": sprinkle})

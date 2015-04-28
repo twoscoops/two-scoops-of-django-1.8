@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,16 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+    @mock.patch.object(icecreamapi, "get_flavors")
+    def test_flavor_sort_failure(self, get_flavors):
+        # Instructs icecreamapi.get_flavors() to throw a FlavorError.
+        get_flavors.side_effect = icecreamapi.FlavorError()
+
+        # list_flavors_sorted() catches the icecreamapi.FlavorError()
+        #   and passes on a CantListFlavors exception.
+        with self.assertRaises(CantListFlavors):
+            list_flavors_sorted()

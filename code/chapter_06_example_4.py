@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,23 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+from django.db import models
+from django.utils import timezone
+
+class PublishedManager(models.Manager):
+
+    use_for_related_fields = True
+
+    def published(self, **kwargs):
+        return self.filter(pub_date__lte=timezone.now(), **kwargs)
+
+class FlavorReview(models.Model):
+    review = models.CharField(max_length=255)
+    pub_date = models.DateTimeField()
+
+    # add our custom model manager
+    objects = PublishedManager()

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,43 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# core/api.py
+"""Called from the project root's urls.py URLConf thus:
+        url(r"^api/", include("core.api", namespace="api")),
+"""
+from django.conf.urls import url
+
+from flavors import views as flavor_views
+from users import views as user_views
+
+urlpatterns = [
+    # {% url "api:flavors" %}
+    url(
+        regex=r"^flavors/$",
+        view=flavor_views.FlavorCreateReadView.as_view(),
+        name="flavors"
+    ),
+    # {% url "api:flavors" flavor.slug %}
+    url(
+        regex=r"^flavors/(?P<slug>[-\w]+)/$",
+        view=flavor_views.FlavorReadUpdateDeleteView.as_view(),
+        name="flavors"
+    ),
+    # {% url "api:users" %}
+    url(
+        regex=r"^users/$",
+        view=user_views.UserCreateReadView.as_view(),
+        name="users"
+    ),
+    # {% url "api:users" user.slug %}
+    url(
+        regex=r"^users/(?P<slug>[-\w]+)/$",
+        view=user_views.UserReadUpdateDeleteView.as_view(),
+        name="users"
+    ),
+]
+

@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -22,7 +23,22 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# core/views.py
+class TitleSearchMixin(object):
+
+    def get_queryset(self):
+        # Fetch the queryset from the parent's get_queryset
+        queryset = super(TitleSearchMixin, self).get_queryset()
+
+        # Get the q GET parameter
+        q = self.request.GET.get("q")
+        if q:
+            # return a filtered queryset
+            return queryset.filter(title__icontains=q)
+        # No q is specified so we return queryset
+        return queryset
+

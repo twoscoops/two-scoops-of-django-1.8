@@ -1,0 +1,7 @@
+templates/
+    base.html
+    dashboard.html # extends base.html
+    profiles/
+        base_profiles.html # extends base.html
+        profile_detail.html # extends base_profiles.html
+        profile_form.html # extends base_profiles.html

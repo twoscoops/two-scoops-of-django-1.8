@@ -1,4 +1,5 @@
-Using These Code Examples
+"""
+Using This Code Example
 =========================
 
 The code examples provided are provided by Daniel Greenfeld and Audrey Roy of
@@ -25,4 +26,25 @@ example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
 Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
-given here, please contact us at info@twoscoopspress.org.
+given here, please contact us at info@twoscoopspress.org."""
+# serializer_example.py
+from django.core.serializers import get_serializer
+
+from favorites.models import Favorite
+
+# Get and instantiate the serializer class
+# The 'json' can be replaced with 'python' or 'xml'.
+# If you have pyyaml installed, you can replace it with
+#   'pyyaml'
+JSONSerializer = get_serializer("json")
+serializer = JSONSerializer()
+
+favs = Favorite.objects.filter()[:5]
+
+# Serialize model data
+serialized_data = serializer.serialize(favs)
+
+# save the serialized data for use in the next example
+with open("data.json", "w") as f:
+    f.write(serialized_data)
+
