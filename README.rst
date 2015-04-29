@@ -3,12 +3,6 @@ Two Scoops of Django 1.8
 
 Tracking thoughts and feature requests for the just-released `Two Scoops of Django 1.8`_ in the issue tracker. And the code examples from the book_ are in this repo.
 
-.. image:: http://twoscoops.smugmug.com/Two-Scoops-Press-Media-Kit/i-HZqTR3Z/0/S/two-scoops-1.8-ebook-S.jpg
-   :name: Two Scoops Logo
-   :align: center
-   :alt: Two Scoops of Django
-   :target: http://twoscoopspress.org/products/two-scoops-of-django-1-8
-
 Before You Submit an Issue
 ----------------------------
 
@@ -19,6 +13,12 @@ Before You Submit an Issue
 * For tracking and credit purposes, **each request for correction needs to be in it's own issue. If an issue contains 2 or more issues, we'll close it with a request for breaking up into more atomic issues.**
 
 **Editorial Note:** In order to make issues more readily searchable, we will alter titles and descriptions of issues as needed.
+
+.. image:: http://twoscoops.smugmug.com/Two-Scoops-Press-Media-Kit/i-HZqTR3Z/0/S/two-scoops-1.8-ebook-S.jpg
+   :name: Two Scoops Logo
+   :align: center
+   :alt: Two Scoops of Django
+   :target: http://twoscoopspress.org/products/two-scoops-of-django-1-8
 
 .. _open: https://github.com/twoscoops/two-scoops-of-django-1.8/issues?state=open
 .. _closed: https://github.com/twoscoops/two-scoops-of-django-1.8/issues?state=closed
