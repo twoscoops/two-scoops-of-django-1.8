@@ -3,14 +3,6 @@ Two Scoops of Django 1.8
 
 Tracking thoughts and feature requests for the just-released `Two Scoops of Django 1.8`_ in the issue tracker. And the code examples from the book_ are in this repo.
 
-.. image:: https://lh3.googleusercontent.com/-1fmbRAneow8/VUBoB2Fe68I/AAAAAAAAE2k/hiEPknr-A3c/w762-h573/two-scoops-1.8-ebook.jpg
-   :name: Two Scoops Logo
-   :align: center
-   :alt: Two Scoops of Django
-   :target: http://twoscoopspress.org/products/two-scoops-of-django-1-8
-
-.. _`Two Scoops of Django 1.8`: http://twoscoopspress.org/products/two-scoops-of-django-1-8
-.. _book: http://twoscoopspress.org/products/two-scoops-of-django-1-8
 
 
 Before You Submit an Issue
@@ -29,6 +21,14 @@ Before You Submit an Issue
 .. _FAQ: http://twoscoopspress.com/products/two-scoops-of-django-1.8#FAQ
 
 
+.. image:: https://lh3.googleusercontent.com/-1fmbRAneow8/VUBoB2Fe68I/AAAAAAAAE2k/hiEPknr-A3c/w762-h573/two-scoops-1.8-ebook.jpg
+   :name: Two Scoops Logo
+   :align: center
+   :alt: Two Scoops of Django
+   :target: http://twoscoopspress.org/products/two-scoops-of-django-1-8
+
+.. _`Two Scoops of Django 1.8`: http://twoscoopspress.org/products/two-scoops-of-django-1-8
+.. _book: http://twoscoopspress.org/products/two-scoops-of-django-1-8
 
 
-.. _`Two Scoops of Django: Best Practices for Django 1.6`: http://twoscoopspress.org/products/two-scoops-of-django-1-6
+.. _`Two Scoops of Django: Best Practices for Django 1.8`: http://twoscoopspress.org/products/two-scoops-of-django-1-8
