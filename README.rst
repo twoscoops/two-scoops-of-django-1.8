@@ -3,7 +3,7 @@ Two Scoops of Django 1.8
 
 Tracking thoughts and feature requests for the just-released `Two Scoops of Django 1.8`_ in the issue tracker. And the code examples from the book_ are in this repo.
 
-.. image:: https://cdn.shopify.com/s/files/1/0304/6901/files/1.8-early-release-blue-470x246.png?13936320240685754232
+.. image:: https://lh3.googleusercontent.com/-1fmbRAneow8/VUBoB2Fe68I/AAAAAAAAE2k/hiEPknr-A3c/w762-h573/two-scoops-1.8-ebook.jpg
    :name: Two Scoops Logo
    :align: center
    :alt: Two Scoops of Django
