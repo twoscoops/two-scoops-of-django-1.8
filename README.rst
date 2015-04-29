@@ -21,7 +21,7 @@ Before You Submit an Issue
 .. _FAQ: http://twoscoopspress.com/products/two-scoops-of-django-1.8#FAQ
 
 
-.. image:: https://lh3.googleusercontent.com/-1fmbRAneow8/VUBoB2Fe68I/AAAAAAAAE2k/hiEPknr-A3c/w762-h573/two-scoops-1.8-ebook.jpg
+.. image:: http://twoscoops.smugmug.com/Two-Scoops-Press-Media-Kit/i-HZqTR3Z/0/S/two-scoops-1.8-ebook-S.jpg
    :name: Two Scoops Logo
    :align: center
    :alt: Two Scoops of Django
