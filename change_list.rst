@@ -1,3 +1,9 @@
+Two Scoops of Django 1.8 Change List Update #1
+==============================================
+
+* PDF TOC navbar will have chapter/section numbers (#41)
+
+
 Two Scoops of Django 1.8 Change List
 =====================================
 
