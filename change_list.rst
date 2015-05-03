@@ -10,6 +10,10 @@ Two Scoops of Django 1.8 Change List Update #1
 * Chapter: Building REST APIs
 
   * In warning box about simple API lacking permissions, link to relevant section in DRF documentation.
+  
+* Chapter: Security
+
+  * Warning box that static media is not protected by ``SecurityMiddleware``.
 
 * PDF TOC navbar will have chapter/section numbers (#41)
 * Grammar/Spelling (#443, #44)
