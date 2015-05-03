@@ -14,6 +14,24 @@ Two Scoops of Django 1.8 Change List Update #1
 * Chapter: Security
 
   * Warning box that static media is not protected by ``SecurityMiddleware``.
+  
+* Appendix G: Security Settings Reference (NEW)
+
+  * ALLOWED_HOSTS
+  
+  * CSRF_COOKIE_SECURE
+  
+  * DEBUG
+  
+  * MIDDLEWARE_CLASSES
+  
+  * SECRET_KEY
+  
+  * SECURE_SSL_HOST
+  
+  * SESSION_COOKIE_SECURE
+  
+  * SESSION_SERIALIZER
 
 * PDF TOC navbar will have chapter/section numbers (#41)
 * Grammar/Spelling (#443, #44)
