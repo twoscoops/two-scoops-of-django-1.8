@@ -15,6 +15,8 @@ Two Scoops of Django 1.8 Change List Update #1
 
   * Warning box that static media is not protected by ``SecurityMiddleware``.
   
+  * PasswordInput variant suggestion for payment information entered in public venues.
+  
 * Appendix G: Security Settings Reference (NEW)
 
   * ALLOWED_HOSTS
