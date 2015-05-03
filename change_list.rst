@@ -7,9 +7,8 @@ Two Scoops of Django 1.8 Change List
 Two Scoops of Django 1.8 Change List Update #1
 ==============================================
 
-* Spelling correction (#44)
 * PDF TOC navbar will have chapter/section numbers (#41)
-
+* Grammar/Spelling (#443, #44)
 
 Two Scoops of Django 1.8 Early Release Change List
 ==================================================
