@@ -23,6 +23,11 @@ Two Scoops of Django 1.8 Change List Update #1
 
   * Added subsection 22.3.7 on *Testing for Failure*.
   
+  * added section 22.10 for alternatives to `unittest`
+  
+    * pytest and pytest-django
+    *nose and django-nose
+  
 * Chapter: Security
 
   * Added warning box that static media is not protected by ``SecurityMiddleware``.
