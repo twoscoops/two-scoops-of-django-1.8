@@ -46,6 +46,8 @@ Two Scoops of Django 1.8 Change List Update #1
   
   * SECRET_KEY
   
+  * SECURE_PROXY_SSL_HEADER
+  
   * SECURE_SSL_HOST
   
   * SESSION_COOKIE_SECURE
