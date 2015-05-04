@@ -10,6 +10,10 @@ Two Scoops of Django 1.8 Change List Update #1
 * Chapter: Building REST APIs
 
   * In warning box about simple API lacking permissions, link to relevant section in DRF documentation.
+
+* Chapter: User Model
+
+  * Added `verbose_name` argument to `PositiveIntegerField`.
   
 * Chapter: Third-Party Packages
 
