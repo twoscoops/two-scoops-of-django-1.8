@@ -39,8 +39,8 @@ Two Scoops of Django 1.8 Change List Update #1
   
   * SESSION_SERIALIZER
 
-* PDF TOC navbar will have chapter/section numbers (#41)
-* Grammar/Spelling (#443, #44)
+* PDF TOC navbar now have chapter/section numbers
+* Grammar/Spelling
 
 Two Scoops of Django 1.8 Early Release Change List
 ==================================================
