@@ -7,6 +7,10 @@ Two Scoops of Django 1.8 Change List
 Two Scoops of Django 1.8 Change List Update #1
 ==============================================
 
+* Chapter: Project Layout
+
+  * Fixed URL to cookiecutters
+
 * Chapter: Building REST APIs
 
   * In warning box about simple API lacking permissions, linked to relevant section in DRF documentation.
