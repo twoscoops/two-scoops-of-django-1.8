@@ -11,6 +11,10 @@ Two Scoops of Django 1.8 Change List Update #1
 
   * In warning box about simple API lacking permissions, link to relevant section in DRF documentation.
   
+* Chapter: Third-Party Packages
+
+  * For the purpose of clarity, swtiched from OSI to choosealicense.com for selecting licenses.
+  
 * Chapter: Security
 
   * Warning box that static media is not protected by ``SecurityMiddleware``.
