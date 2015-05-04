@@ -26,7 +26,7 @@ Two Scoops of Django 1.8 Change List Update #1
   * added section 22.10 for alternatives to `unittest`
   
     * pytest and pytest-django
-    *nose and django-nose
+    * nose and django-nose
   
 * Chapter: Security
 
