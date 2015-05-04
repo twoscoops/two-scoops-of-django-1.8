@@ -11,6 +11,10 @@ Two Scoops of Django 1.8 Change List Update #1
 
   * In warning box about simple API lacking permissions, linked to relevant section in DRF documentation.
 
+* Chapter: Tradeoffs Replacing Core Components
+
+  * Added mention of CAP theorem to the fad table
+
 * Chapter: User Model
 
   * Added `verbose_name` argument to `PositiveIntegerField`.
