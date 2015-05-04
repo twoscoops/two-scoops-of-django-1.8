@@ -9,7 +9,7 @@ Two Scoops of Django 1.8 Change List Update #1
 
 * Chapter: Building REST APIs
 
-  * In warning box about simple API lacking permissions, link to relevant section in DRF documentation.
+  * In warning box about simple API lacking permissions, linked to relevant section in DRF documentation.
 
 * Chapter: User Model
 
@@ -17,13 +17,17 @@ Two Scoops of Django 1.8 Change List Update #1
   
 * Chapter: Third-Party Packages
 
-  * For the purpose of clarity, swtiched from OSI to choosealicense.com for selecting licenses.
+  * For the purpose of clarity, switched from OSI to choosealicense.com for selecting licenses.
+  
+* Chapter: Testing
+
+  * Added subsection 22.3.7 on *Testing for Failure*.
   
 * Chapter: Security
 
-  * Warning box that static media is not protected by ``SecurityMiddleware``.
+  * Added warning box that static media is not protected by ``SecurityMiddleware``.
   
-  * PasswordInput variant suggestion for payment information entered in public venues.
+  * Added PasswordInput variant suggestion for payment information entered in public venues.
   
 * Appendix G: Security Settings Reference (NEW)
 
