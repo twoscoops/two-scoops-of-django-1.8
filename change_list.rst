@@ -42,6 +42,10 @@ Two Scoops of Django 1.8 Change List Update #1
   
   * Added PasswordInput variant suggestion for payment information entered in public venues.
   
+* Chapter: Ask Questions
+
+  * Removed broken link to the defunct planetdjango.org
+  
 * Appendix G: Security Settings Reference (NEW)
 
   * ALLOWED_HOSTS
