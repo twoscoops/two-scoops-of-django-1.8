@@ -35,7 +35,6 @@
   * SECURE_SSL_HOST
   * SESSION_COOKIE_SECURE
   * SESSION_SERIALIZER
-
 * PDF TOC navbar now have chapter/section numbers
 * Grammar/Spelling
 
