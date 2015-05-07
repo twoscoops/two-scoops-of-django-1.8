@@ -6,15 +6,15 @@
 ## Two Scoops of Django 1.8 Change List Update #1
 
 * Chapter: Project Layout
-  * Fixed URL to cookiecutters
+  * Fixed URL to cookiecutters, thanks to @MihailRussu (#47)
 * Chapter: Building REST APIs
   * In warning box about simple API lacking permissions, linked to relevant section in DRF documentation.
 * Chapter: Tradeoffs Replacing Core Components
-  * Added mention of CAP theorem to the fad table
+  * Added mention of CAP theorem to the fad table, thanks to @vartec
 * Chapter: User Model
   * Added `verbose_name` argument to `PositiveIntegerField`.
 * Chapter: Third-Party Packages
-  * For the purpose of clarity, switched from OSI to choosealicense.com for selecting licenses.
+  * For the purpose of clarity, switched from OSI to choosealicense.com for selecting licenses, thanks to @vartec
 * Chapter: Testing
   * Added subsection 22.3.7 on *Testing for Failure*.
   * added section 22.10 for alternatives to `unittest`
@@ -24,7 +24,7 @@
   * Added warning box that static media is not protected by ``SecurityMiddleware``.
   * Added PasswordInput variant suggestion for payment information entered in public venues.
 * Chapter: Ask Questions
-  * Removed broken link to the defunct planetdjango.org
+  * Removed broken link to the defunct planetdjango.org, thanks to @jeanbaptistelab (#46)
 * Appendix G: Security Settings Reference (NEW)
   * ALLOWED_HOSTS
   * CSRF_COOKIE_SECURE
@@ -35,8 +35,8 @@
   * SECURE_SSL_HOST
   * SESSION_COOKIE_SECURE
   * SESSION_SERIALIZER
-* PDF TOC navbar now have chapter/section numbers
-* Grammar/Spelling
+* PDF TOC navbar now have chapter/section numbers, suggested by @gkeller2 (#41)
+* Grammar/Spelling, thanks to @PatCurry and @gkeller2 
 
 ## Two Scoops of Django 1.8 Early Release Change List
 
