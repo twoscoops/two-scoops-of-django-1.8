@@ -1,7 +1,17 @@
 # Two Scoops of Django 1.8 Change List
 
-
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
+
+## Two Scoops of Django 1.8 Change List Update #2
+
+* Chapter: Form Fundamentals
+  * In example 11.4 Changed `# flavors/models.py` to `# flavors/views.py`, thanks to @ksketo (#55)
+  * Fixed two links to CSRF docs thanks to @ksketo (#54)
+* Chapter: Queries and the Database Layer
+  * Corrected code example 7.1 thanks to @schinkelg (#56)
+* Chapter: Debugging
+  * In subsection on ALLOWED_HOSTS switched specification of DEBUG=True to DEBUG is False, thanks to @nbensa (#52)
+* Grammar/Spelling, thanks to @belak, @timbb07, @afuna, @zuhairp
 
 ## Two Scoops of Django 1.8 Change List Update #1
 
