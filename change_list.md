@@ -9,10 +9,15 @@
   * Fixed two links to CSRF docs thanks to @ksketo (#54)
 * Chapter: Queries and the Database Layer
   * Corrected code example 7.1 thanks to @schinkelg (#56)
+* Chapter: Asynchronous Task Queues (NEW), suggested by @abhaga and many others (#36)
+  * Is a task queue needed?
+  * Choosing task queue software
+  * best practices for task queues
+  * resources
 * Chapter: Debugging
   * Added subsection on debugging file uploads (#31)
   * In subsection on ALLOWED_HOSTS switched specification of DEBUG=True to DEBUG is False, thanks to @nbensa (#52)
-* Grammar/Spelling, thanks to @belak, @timbb07, @afuna, @zuhairp
+* Grammar/Spelling, thanks to @belak, @timbb07, @afuna, @zuhairp, @KTamayo
 
 ## Two Scoops of Django 1.8 Change List Update #1
 
