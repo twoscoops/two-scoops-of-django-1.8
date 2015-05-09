@@ -9,6 +9,8 @@
   * Fixed two links to CSRF docs thanks to @ksketo (#54)
 * Chapter: Queries and the Database Layer
   * Corrected code example 7.1 thanks to @schinkelg (#56)
+* Chapter: Templates
+  * Removed mention of style guide in the context of 404/500 pages, thanks to @ssarj (#58)
 * Chapter: Bottlenecks
   * Added mention of `prefetch_related`
 * Chapter: Asynchronous Task Queues (NEW), suggested by @abhaga and many others (#36)
