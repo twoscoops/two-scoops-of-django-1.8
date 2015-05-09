@@ -10,6 +10,7 @@
 * Chapter: Queries and the Database Layer
   * Corrected code example 7.1 thanks to @schinkelg (#56)
 * Chapter: Debugging
+  * Added subsection on debugging file uploads (#31)
   * In subsection on ALLOWED_HOSTS switched specification of DEBUG=True to DEBUG is False, thanks to @nbensa (#52)
 * Grammar/Spelling, thanks to @belak, @timbb07, @afuna, @zuhairp
 
