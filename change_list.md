@@ -7,7 +7,8 @@
 * Chapter: Queries and the Database Layer
   * Corrected code example 7.1 thanks to @schinkelg (#56)
 * Chapter: Form Fundamentals
-  * In example 11.4 Changed `# flavors/models.py` to `# flavors/views.py`, thanks to @ksketo (#55)
+  * Added section 11.4 - adding form instance attributes, thansk to @halfnibble and @lambacck (#10).
+  * In example 11.5 Changed `# flavors/models.py` to `# flavors/views.py`, thanks to @ksketo (#55)
   * Fixed two links to CSRF docs thanks to @ksketo (#54)
 * Chapter: Templates
   * Removed mention of style guide in the context of 404/500 pages, thanks to @ssarj (#58)
