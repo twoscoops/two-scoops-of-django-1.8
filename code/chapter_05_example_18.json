@@ -1,6 +1,0 @@
-{
-    "FILENAME": "secrets.json",
-    "SECRET_KEY": "I've got a secret!",
-    "DATABASES_HOST": "127.0.0.1",
-    "PORT": "5432"
-}

@@ -1,3 +1,0 @@
-<repository_root>/
-    <django_project_root>/
-        <configuration_root>/

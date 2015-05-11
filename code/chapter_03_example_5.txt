@@ -1,2 +1,0 @@
-~/projects/icecreamratings_project/
-~/.envs/icecreamratings/

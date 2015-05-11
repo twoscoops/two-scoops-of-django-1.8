@@ -1,2 +1,0 @@
-django.core.exceptions.ImproperlyConfigured: Set the SOME_SECRET_KEY 
-environment variable.

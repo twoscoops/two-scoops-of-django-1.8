@@ -1,1 +1,0 @@
-python manage.py runserver --settings=twoscoops.settings.local
