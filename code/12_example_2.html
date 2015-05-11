@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css"
+        href="{% static "css/dashboard.css" %}" />
+    {% comment %}
+        By not using {{ block.super }}, this block overrides the 
+        stylesheet block of base.html
+    {% endcomment %}
+{% endblock %}

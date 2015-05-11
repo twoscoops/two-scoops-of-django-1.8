@@ -1,0 +1,11 @@
+>>> from django.contrib.auth import get_user_model
+>>> from django.utils import timezone
+>>> from events.models import Event
+>>> user = get_user_model().get(username="audreyr")
+>>> now = timezone.now()
+>>> event = Event.objects.create_event(
+...     title="International Ice Cream Tasting Competition",
+...     start=now,
+...     end=now,
+...     user=user
+...     )

@@ -1,0 +1,7 @@
+settings/
+    __init__.py
+    base.py
+    local.py
+    staging.py
+    test.py
+    production.py

@@ -1,0 +1,5 @@
+core/
+    __init__.py
+    managers.py  # contains the custom model manager(s)
+    models.py
+    views.py  # Contains the custom view mixin(s)

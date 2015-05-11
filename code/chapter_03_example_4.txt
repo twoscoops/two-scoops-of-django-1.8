@@ -1,0 +1,19 @@
+icecreamratings_project/
+    .gitignore
+    Makefile
+    docs/
+    README.rst
+    requirements.txt
+    icecreamratings/
+        manage.py
+        media/  # Development ONLY!
+        products/
+        profiles/
+        ratings/
+        static/
+        templates/
+        config/
+            __init__.py
+            settings/
+            urls.py
+            wsgi.py

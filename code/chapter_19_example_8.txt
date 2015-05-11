@@ -1,0 +1,3 @@
+# setup.cfg
+[wheel]
+universal = 1

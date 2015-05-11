@@ -1,0 +1,1 @@
+$ coverage run manage.py test --settings=twoscoops.settings.test

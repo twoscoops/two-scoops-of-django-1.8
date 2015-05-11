@@ -1,0 +1,8 @@
+# Only if you installed cookiecutter yet
+$ pip install cookiecutter
+
+# Creating a Django Package from scratch
+$ cookiecutter https://github.com/pydanny/cookiecutter-djangopackage.git
+
+# Creating a Python Package from scratch
+$ cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
