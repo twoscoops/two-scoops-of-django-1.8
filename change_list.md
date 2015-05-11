@@ -24,7 +24,7 @@
   * best practices for task queues
   * resources
 * Chapter: Continuous Integration
-  * Mention code coverage as a service
+  * Mention code coverage (codecov.io) as a service
 * Chapter: Debugging
   * Added subsection on debugging file uploads (#31)
   * In subsection on ALLOWED_HOSTS switched specification of DEBUG=True to DEBUG is False, thanks to @nbensa (#52)
