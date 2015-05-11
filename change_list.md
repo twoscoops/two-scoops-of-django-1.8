@@ -4,13 +4,15 @@
 
 ## Two Scoops of Django 1.8 Change List Update #2
 
+* Chapter: Queries and the Database Layer
+  * Corrected code example 7.1 thanks to @schinkelg (#56)
 * Chapter: Form Fundamentals
   * In example 11.4 Changed `# flavors/models.py` to `# flavors/views.py`, thanks to @ksketo (#55)
   * Fixed two links to CSRF docs thanks to @ksketo (#54)
-* Chapter: Queries and the Database Layer
-  * Corrected code example 7.1 thanks to @schinkelg (#56)
 * Chapter: Templates
   * Removed mention of style guide in the context of 404/500 pages, thanks to @ssarj (#58)
+* Chapter: Third-Party Packages
+  * Fixed broken link to @alex's blog (HTTPS all the things!), thanks to @jpadilla (#62)
 * Chapter: Testing
   * Added subsection on using fancier test methods (#34)
 * Chapter: Bottlenecks
@@ -27,7 +29,7 @@
   * In subsection on ALLOWED_HOSTS switched specification of DEBUG=True to DEBUG is False, thanks to @nbensa (#52)
 * Appendix A: Packages 
   * Added django-watson, django-reversions, django-background-tasks, flower, and more
-* Grammar/Spelling, thanks to @belak, @timbb07, @afuna, @zuhairp, @KTamayo
+* Grammar/Spelling, thanks to @belak, @timbb07, @afuna, @zuhairp, @KTamayo, @cdjk
 
 ## Two Scoops of Django 1.8 Change List Update #1
 
