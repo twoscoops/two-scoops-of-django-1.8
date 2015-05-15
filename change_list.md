@@ -16,6 +16,7 @@
   * Clarified some of the definitions
   * Expanded on the REST API architecture section
   * Added www.cdrf.co because it is awesome. (#73)
+  * Added `serializer_class` in DRF sample, thanks to @tomchristie
 * Chapter: Asynchronous Task Queues
   * Removed unnecessary column headers from table 25.2, thanks to @jliendo (#68)
   * Removed section on passing in kwargs.
