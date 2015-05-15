@@ -28,7 +28,7 @@
   * Fixed ALLOWED_HOSTS. Again. Thanks to @nbensa (#67)
 * Appendix G: Security Settings
   * Corrected DEBUG settings, thanks to @phinnaeus (#66)
-* Grammar/Spelling, thanks to @cdjk, @patpatpatpatpat
+* Grammar/Spelling, thanks to @cdjk, @patpatpatpatpat, @cpsimpson
 * Many small but important formatting changes!
 
 ## Two Scoops of Django 1.8 Change List Update #2
