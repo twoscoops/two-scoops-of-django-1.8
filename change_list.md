@@ -2,6 +2,34 @@
 
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
 
+## Two Scoops of Django 1.8 Change List Update #3
+
+* Chapter: Model Best Practices
+  * Clarified text in figure 6.1, thanks to @gkeller2 (#71)
+  * Fixed table 6.3 formatting, thanks to @gkeller2 (#72)
+* Chapter: Best Practices for Class-Based Views
+  * Indexed the slug field used in queries, thanks to @bogdal (#65)
+* Chapter: Form Fundamentals
+  * Added `Form.add_error` thanks to @michaeljohnbarr (#64)
+  * Added links to the other new and nifty form methods, thanks to @michaeljohnbarr (#70)
+* Chapter: REST API
+  * Clarified some of the definitions
+  * Expanded on the REST API architecture section
+  * Added www.cdrf.co because it is awesome. (#73)
+* Chapter: Asynchronous Task Queues
+  * Removed unnecessary column headers from table 25.2, thanks to @jliendo (#68)
+  * Removed section on passing in kwargs.
+* Chapter: Security
+  * Fixed Bad URL to @alex's blog, thanks to @jpadilla (#62)
+  * Added UUID to obfuscate primary keys, thanks to @kevinxu and @michaeljohnbarr (#1)
+  * Corrected CSRF internal reference to forms chapter, thanks to @kelseyq (#69)
+* Chapter: Debugging
+  * Fixed ALLOWED_HOSTS. Again. Thanks to @nbensa (#67)
+* Appendix G: Security Settings
+  * Corrected DEBUG settings, thanks to @phinnaeus (#66)
+* Grammar/Spelling, thanks to @cdjk, @patpatpatpatpat
+* Many small but important formatting changes!
+
 ## Two Scoops of Django 1.8 Change List Update #2
 
 * Chapter: Queries and the Database Layer
