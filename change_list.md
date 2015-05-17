@@ -4,8 +4,12 @@
 
 ## Two Scoops of Django 1.8 Change List Update #4
 
-* Chapter Best Practices for CBVs
+* Chapter: Queries
+  * Pointed text at correct code example, thanks to Nicolas Pannetier (#77)
+* Chapter: Best Practices for CBVs
   * Fixed `get_object_or_404`, thanks to Adam Bogdał (#65)
+* Chapter: Common Patterns for forms
+  * Pointed text at correct code example, thanks to Nicolas Pannetier (#77)
 
 ## Two Scoops of Django 1.8 Change List Update #3
 
