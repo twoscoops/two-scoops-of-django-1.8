@@ -11,7 +11,8 @@
 * Chapter: Best Practices for CBVs
   * Fixed `get_object_or_404`, thanks to Adam Bogdał (#65)
 * Chapter: Common Patterns for forms
-  * Pointed text at correct code example, thanks to Nicolas Pannetier (#77)
+  * Pointed text at correct code example, thanks to @NPann (#77)
+  * Addressed `forms.ValidationError` argument for `code`, thanks to @arnaudlimbourg and @mjtamlyn  (#63) 
 * Chapter: Utilities
   * Added section on creating `utils.py`
 
