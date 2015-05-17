@@ -2,6 +2,11 @@
 
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
 
+## Two Scoops of Django 1.8 Change List Update #4
+
+* Chapter Best Practices for CBVs
+  * Fixed `get_object_or_404`, thanks to Adam Bogdał (#65)
+
 ## Two Scoops of Django 1.8 Change List Update #3
 
 * Chapter: Model Best Practices
