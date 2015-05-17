@@ -10,6 +10,8 @@
   * Fixed `get_object_or_404`, thanks to Adam Bogdał (#65)
 * Chapter: Common Patterns for forms
   * Pointed text at correct code example, thanks to Nicolas Pannetier (#77)
+* Chapter: Utilities
+  * Added section on creating `utils.py`
 
 ## Two Scoops of Django 1.8 Change List Update #3
 
