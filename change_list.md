@@ -4,6 +4,8 @@
 
 ## Two Scoops of Django 1.8 Change List Update #4
 
+* Chapter: Fundamentals of App Design
+  * Reference the ulitities chapter from the listing of `utils.py`
 * Chapter: Queries
   * Pointed text at correct code example, thanks to Nicolas Pannetier (#77)
 * Chapter: Best Practices for CBVs
