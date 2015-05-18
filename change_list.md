@@ -4,12 +4,16 @@
 
 ## Two Scoops of Django 1.8 Change List Update #4
 
+* Chapter: Optimal Django Setup
+  * Clarified using `django-admin.py` instead of `manage.py`
 * Chapter: Fundamentals of App Design
   * Reference the ulitities chapter from the listing of `utils.py`
 * Chapter: Queries
-  * Pointed text at correct code example, thanks to Nicolas Pannetier (#77)
+  * Pointed text at correct code example, thanks to @NPann (#77)
+* Chapter: 
+  * Added section on avoiding usie of `locals()` as views context, thanks to @michaeljohnbarr (#78)
 * Chapter: Best Practices for CBVs
-  * Fixed `get_object_or_404`, thanks to Adam Bogdał (#65)
+  * Fixed `get_object_or_404`, thanks to @bogdal (#65)
 * Chapter: Common Patterns for Forms
   * Pointed text at correct code example, thanks to @NPann (#77)
   * Addressed `forms.ValidationError` argument for `code`, thanks to @arnaudlimbourg and @mjtamlyn  (#63) 
