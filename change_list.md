@@ -5,9 +5,9 @@
 ## Two Scoops of Django 1.8 Change List Update #4
 
 * Chapter: Optimal Django Setup
-  * Clarified using `django-admin.py` instead of `manage.py`
+  * Clarified `PYTHONPATH` box and using `django-admin.py` instead of `manage.py`
 * Chapter: Fundamentals of App Design
-  * Reference the ulitities chapter from the listing of `utils.py`
+  * Reference the utilities chapter from the listing of `utils.py`
 * Chapter: Queries
   * Pointed text at correct code example, thanks to @NPann (#77)
 * Chapter: 
