@@ -4,24 +4,34 @@
 
 ## Two Scoops of Django 1.8 Change List Update #4
 
+* Chapter: Coding Style
+  * Changed the bullets in `Consider the Django Coding Style Guidelines` into subsections so they could be expanded up with code examples.
 * Chapter: Environment Setup
   * Moved `Fixtures Are Not a Magic Solution` subsection downwards in the chapter to make more sense
   * Changed some spacing to improve readability
 * Chapter: Optimal Django Setup
+  * Reworked the 3-tier project layout sections
+  * Changed named of `Using a Cookiecutter Template to Generate Our Layout` to `Going Beyond startproject`
+  * Explained the reasoning behind and the use of `Cookiecutter` and why we stopped updating django-twoscoops-project
   * Clarified `PYTHONPATH` box and using `django-admin.py` instead of `manage.py`
 * Chapter: Fundamentals of App Design
   * Reference the utilities chapter from the listing of `utils.py`
 * Chapter: Queries
   * Pointed text at correct code example, thanks to @NPann (#77)
-* Chapter: 
+* Chapter: Class- and Function-Based Views
   * Added section on avoiding usie of `locals()` as views context, thanks to @michaeljohnbarr (#78)
 * Chapter: Best Practices for CBVs
   * Fixed `get_object_or_404`, thanks to @bogdal (#65)
 * Chapter: Common Patterns for Forms
   * Pointed text at correct code example, thanks to @NPann (#77)
   * Addressed `forms.ValidationError` argument for `code` in a tip box, thanks to @arnaudlimbourg and @mjtamlyn  (#63) 
+* Chapter: Security
+  * Added reference to `Appendix G: Security Settings Reference`
 * Chapter: Utilities
   * Added section on creating `utils.py`
+* Appendix G: Security Settings Reference
+  * Added section on Cross Site Request Forgery protection
+  * Added mention of secure settings for email
 * Changed `helper` module term to `utility` as that is more in line with CS best practices
 * Grammar and tyoo fixes
 * Link cleanup
