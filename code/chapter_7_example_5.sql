@@ -1,1 +1,0 @@
-SELECT * from customers_customer where scoops_ordered > store_visits

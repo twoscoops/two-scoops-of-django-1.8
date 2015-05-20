@@ -1,5 +1,0 @@
-requirements/
-    base.txt
-    local.txt
-    staging.txt
-    production.txt
