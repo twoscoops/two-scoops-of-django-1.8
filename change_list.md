@@ -4,6 +4,9 @@
 
 ## Two Scoops of Django 1.8 Change List Update #4
 
+* Chapter: Environment Setup
+  * Moved `Fixtures Are Not a Magic Solution` subsection downwards in the chapter to make more sense
+  * Changed some spacing to improve readability
 * Chapter: Optimal Django Setup
   * Clarified `PYTHONPATH` box and using `django-admin.py` instead of `manage.py`
 * Chapter: Fundamentals of App Design
@@ -16,10 +19,13 @@
   * Fixed `get_object_or_404`, thanks to @bogdal (#65)
 * Chapter: Common Patterns for Forms
   * Pointed text at correct code example, thanks to @NPann (#77)
-  * Addressed `forms.ValidationError` argument for `code`, thanks to @arnaudlimbourg and @mjtamlyn  (#63) 
+  * Addressed `forms.ValidationError` argument for `code` in a tip box, thanks to @arnaudlimbourg and @mjtamlyn  (#63) 
 * Chapter: Utilities
   * Added section on creating `utils.py`
+* Changed `helper` module term to `utility` as that is more in line with CS best practices
+* Grammar and tyoo fixes
 * Link cleanup
+* Formatting corrections
 
 ## Two Scoops of Django 1.8 Change List Update #3
 
