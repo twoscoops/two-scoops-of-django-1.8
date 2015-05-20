@@ -1,0 +1,3 @@
+>>> import os
+>>> os.environ["SOME_SECRET_KEY"]
+"1c3-cr3am-15-yummy"

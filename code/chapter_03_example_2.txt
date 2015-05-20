@@ -1,0 +1,13 @@
+mysite/
+    manage.py
+    my_app/
+        __init__.py
+        admin.py
+        models.py
+        tests.py
+        views.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py

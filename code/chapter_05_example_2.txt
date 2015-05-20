@@ -1,0 +1,1 @@
+python manage.py shell --settings=twoscoops.settings.local
