@@ -23,39 +23,8 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-from django.contrib.auth.models import AnonymousUser
-from django.contrib.sessions.middleware import SessionMiddleware
-from django.test import TestCase, RequestFactory
-
-from .views import cheese_flavors
-
-def add_middleware_to_request(request, middleware_class):
-    middleware = middleware_class()
-    middleware.process_request(request)
-    return request
-
-def add_middleware_to_response(request, middleware_class):
-    middleware = middleware_class()
-    middleware.process_request(request)
-    return request
-
-class SavoryIceCreamTest(TestCase):
-    def setUp(self):
-        # Every test needs access to the request factory.
-        self.factory = RequestFactory()
-
-    def test_cheese_flavors(self):
-        request = self.factory.get('/cheesy/broccoli/')
-        request.user = AnonymousUser()
-
-        # Annotate the request object with a session
-        request = add_middleware_to_request(request, SessionMiddleware)
-        request.session.save()
-
-        # process and test the request
-        response = cheese_flavors(request)
-        self.assertContains(response, "bleah!")
+AUTH_USER_MODEL = "profiles.KarmaUser"

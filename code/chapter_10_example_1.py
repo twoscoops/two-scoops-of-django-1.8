@@ -23,21 +23,19 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# flavors/views.py
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import TemplateView
 
-from braces.views import LoginRequiredMixin
+class FreshFruitMixin(object):
 
-from .models import Flavor
+    def get_context_data(self, **kwargs):
+        context = super(FreshFruitMixin,
+                    self).get_context_data(**kwargs)
+        context["has_fresh_fruit"] = True
+        return context
 
-class FlavorCreateView(LoginRequiredMixin, CreateView):
-    model = Flavor
-    fields = ('title', 'slug', 'scoops_remaining')
-
-class FlavorUpdateView(LoginRequiredMixin, UpdateView):
-    model = Flavor
-    fields = ('title', 'slug', 'scoops_remaining')
+class FruityFlavorView(FreshFruitMixin, TemplateView):
+    template_name = "fruity_flavor.html"

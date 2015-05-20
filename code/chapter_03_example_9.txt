@@ -1,2 +1,0 @@
-$ pip install cookiecutter # Install cookiecutter!
-$ cookiecutter https://github.com/pydanny/cookiecutter-django

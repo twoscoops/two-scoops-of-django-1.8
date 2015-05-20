@@ -23,40 +23,23 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# flavors/forms.py
-from django import forms
-from flavors.models import Flavor
+# flavors/models.py
+from django.core.urlresolvers import reverse
+from django.db import models
 
-class IceCreamOrderForm(forms.Form):
-    """Normally done with forms.ModelForm. But we use forms.Form here
-        to demonstrate that these sorts of techniques work on every
-        type of form.
-    """
+STATUS = (
+    (0, "zero"),
+    (1, "one"),
+)
 
-    slug = forms.ChoiceField("Flavor")
-    toppings = forms.CharField()
+class Flavor(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+    scoops_remaining = models.IntegerField(default=0, choices=STATUS)
 
-    def __init__(self, *args, **kwargs):
-        super(IceCreamOrderForm, self).__init__(*args,
-                    **kwargs)
-        # We dynamically set the choices here rather than
-        # in the flavor field definition. Setting them in
-        # the field definition means status updates won't
-        # be reflected in the form without server restarts.
-        self.fields["slug"].choices = [
-            (x.slug, x.title) for x in Flavor.objects.all()
-        ]
-        # NOTE: We could filter by whether or not a flavor
-        #       has any scoops, but this is an example of
-        #       how to use clean_slug, not filter().
-
-    def clean_slug(self):
-        slug = self.cleaned_data["slug"]
-        if Flavor.objects.get(slug=slug).scoops_remaining <= 0:
-            msg = u"Sorry, we are out of that flavor."
-            raise forms.ValidationError(msg)
-        return slug
+    def get_absolute_url(self):
+        return reverse("flavors:detail", kwargs={"slug": self.slug})

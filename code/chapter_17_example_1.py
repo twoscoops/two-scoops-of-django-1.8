@@ -23,19 +23,19 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
+# core/views.py
+from __future__ import absolute_import
 
-@python_2_unicode_compatible  # For Python 3.4 and 2.7
-class IceCreamBar(models.Model):
-    name = models.CharField(max_length=100)
-    shell = models.CharField(max_length=100)
-    filling = models.CharField(max_length=100)
-    has_stick = models.BooleanField(default=True)
+from django.views.generic import TemplateView
 
-    def __str__(self):
-        return self.name
+from .flavors.models import Flavor
+
+class SiteMapView(TemplateView):
+    template_name = "sitemap.xml"
+
+    def flavors(self):
+        return Flavor.objects.all() 

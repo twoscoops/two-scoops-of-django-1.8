@@ -23,13 +23,26 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# core/models.py
-from django.db import models
+from django.views.generic import UpdateView
 
-class ModelFormFailureHistory(models.Model):
-    form_data = models.TextField()
-    model_data = models.TextField()
+from braces.views import LoginRequiredMixin
+
+from .forms import TasterForm
+from .models import Taster
+
+class TasterUpdateView(LoginRequiredMixin, UpdateView):
+    model = Taster
+    form_class = TasterForm
+    success_url = "/someplace/"
+
+    def get_form_kwargs(self):
+        """This method is what injects forms with their keyword arguments."""
+        # grab the current set of form #kwargs
+        kwargs = super(TasterUpdateView, self).get_form_kwargs()
+        # Update the kwargs with the user_id
+        kwargs['user'] = self.request.user
+        return kwargs

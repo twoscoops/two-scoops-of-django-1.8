@@ -23,16 +23,17 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# stores/calc.py
+# stores/models.py
+from django.conf import settings
+from django.db import models
 
-def finance_data_adjudication(store, sales, issues):
-
-    if store.something_not_right:
-        msg = "Something is not right. Please contact the support team."
-        raise PermissionDenied(msg)
-
-    # Continue on to perform other logic.
+class Store(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField()
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL)
+    co_owners = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    # Assume 10 more fields that cover address and contact info.

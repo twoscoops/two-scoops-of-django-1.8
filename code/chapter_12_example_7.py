@@ -23,21 +23,40 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# vouchers/views.py
-from django.views.generic import TemplateView
+# flavors/forms.py
+from django import forms
+from flavors.models import Flavor
 
-from .models import Voucher
+class IceCreamOrderForm(forms.Form):
+    """Normally done with forms.ModelForm. But we use forms.Form here
+        to demonstrate that these sorts of techniques work on every
+        type of form.
+    """
 
-class GreenfeldRoyView(TemplateView):
-    template_name = "vouchers/views_conditional.html"
+    slug = forms.ChoiceField("Flavor")
+    toppings = forms.CharField()
 
-    def get_context_data(self, **kwargs):
-        context = super(GreenfeldRoyView, self).get_context_data(**kwargs)
-        context["greenfelds"] = \
-                Voucher.objects.filter(name__icontains="greenfeld")
-        context["roys"] = Voucher.objects.filter(name__icontains="roy")
-        return context
+    def __init__(self, *args, **kwargs):
+        super(IceCreamOrderForm, self).__init__(*args,
+                    **kwargs)
+        # We dynamically set the choices here rather than
+        # in the flavor field definition. Setting them in
+        # the field definition means status updates won't
+        # be reflected in the form without server restarts.
+        self.fields["slug"].choices = [
+            (x.slug, x.title) for x in Flavor.objects.all()
+        ]
+        # NOTE: We could filter by whether or not a flavor
+        #       has any scoops, but this is an example of
+        #       how to use clean_slug, not filter().
+
+    def clean_slug(self):
+        slug = self.cleaned_data["slug"]
+        if Flavor.objects.get(slug=slug).scoops_remaining <= 0:
+            msg = u"Sorry, we are out of that flavor."
+            raise forms.ValidationError(msg)
+        return slug

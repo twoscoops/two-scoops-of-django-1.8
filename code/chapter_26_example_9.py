@@ -23,28 +23,20 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# serializer_example.py
-from django.core.serializers import get_serializer
+import uuid as uuid_lib
+from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 
-from favorites.models import Favorite
+@python_2_unicode_compatible
+class IceCreamPayment(models.Model):
+    uuid = models.UUIDField(
+        db_index=True,
+        default=uuid_lib.uuid4,
+        editable=False)
 
-# Get and instantiate the serializer class
-# The 'json' can be replaced with 'python' or 'xml'.
-# If you have pyyaml installed, you can replace it with
-#   'pyyaml'
-JSONSerializer = get_serializer("json")
-serializer = JSONSerializer()
-
-favs = Favorite.objects.filter()[:5]
-
-# Serialize model data
-serialized_data = serializer.serialize(favs)
-
-# save the serialized data for use in the next example
-with open("data.json", "w") as f:
-    f.write(serialized_data)
-
+    def __str__(self):
+        return str(self.pk)

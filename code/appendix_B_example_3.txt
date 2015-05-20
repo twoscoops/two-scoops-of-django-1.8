@@ -1,0 +1,2 @@
+$ virtualenv testenv
+$ source testenv/bin/activate

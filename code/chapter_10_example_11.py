@@ -23,30 +23,26 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# stores/forms.py
-from django import forms
+from django.views.generic import ListView
 
-from .models import IceCreamStore
+from .models import Flavor
 
-class IceCreamStoreCreateForm(forms.ModelForm):
+class FlavorListView(ListView):
+    model = Flavor
 
-    class Meta:
-        model = IceCreamStore
-        fields = ("title", "block_address", )
+    def get_queryset(self):
+        # Fetch the queryset from the parent get_queryset
+        queryset = super(FlavorListView, self).get_queryset()
 
-class IceCreamStoreUpdateForm(IceCreamStoreCreateForm):
+        # Get the q GET parameter
+        q = self.request.GET.get("q")
+        if q:
+            # Return a filtered queryset
+            return queryset.filter(title__icontains=q)
+        # Return the base queryset
+        return queryset
 
-    def __init__(self, *args, **kwargs):
-        super(IceCreamStoreUpdateForm,
-                self).__init__(*args, **kwargs)
-        self.fields["phone"].required = True
-        self.fields["description"].required = True
-
-    class Meta(IceCreamStoreCreateForm.Meta):
-        # show all the fields!
-        fields = ("title", "block_address", "phone",
-                "description", )

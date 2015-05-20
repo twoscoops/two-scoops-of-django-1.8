@@ -23,21 +23,42 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# flavors/forms.py
-from django import forms
+from django.utils.functional import cached_property
+from django.views.generic import UpdateView, TemplateView
 
-from core.validators import validate_tasty
+from braces.views import LoginRequiredMixin
+
 from .models import Flavor
+from .tasks import update_users_who_favorited
 
-class FlavorForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(FlavorForm, self).__init__(*args, **kwargs)
-        self.fields["title"].validators.append(validate_tasty)
-        self.fields["slug"].validators.append(validate_tasty)
+class FavoriteMixin(object):
 
-    class Meta:
-        model = Flavor
+    @cached_property
+    def likes_and_favorites(self):
+        """Returns a dictionary of likes and favorites"""
+        likes = self.object.likes()
+        favorites = self.object.favorites()
+        return {
+            "likes": likes,
+            "favorites": favorites,
+            "favorites_count": favorites.count(),
+
+        }
+
+class FlavorUpdateView(LoginRequiredMixin, FavoriteMixin, UpdateView):
+    model = Flavor
+    fields = ('title', 'slug', 'scoops_remaining')
+
+    def form_valid(self, form):
+        update_users_who_favorited(
+            instance=self.object,
+            favorites=self.likes_and_favorites['favorites']
+        )
+        return super(FlavorCreateView, self).form_valid(form)
+
+class FlavorDetailView(LoginRequiredMixin, FavoriteMixin, TemplateView):
+    model = Flavor

@@ -23,20 +23,16 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# core/utils.py
-from django.core.exceptions import ObjectDoesNotExist
+# stores/models.py
+from django.conf import settings
+from django.db import models
 
-class BorkedObject(object):
-    loaded = False
-
-def generic_load_tool(model, pk):
-    try:
-        instance = model.objects.get(pk=pk)
-    except ObjectDoesNotExist:
-        return BorkedObject()
-    instance.loaded = True
-    return instance
+class Store(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField()
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL)
+    # Assume 10 more fields that cover address and contact info.

@@ -23,17 +23,21 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org.
 -->
-<!-- base.html -->
-{% set ctx = request.context %}
-...
-<div class="ice-cream-advertisement">
-    <a href="{{ ctx.ad.url }}">
-        <img src="ctx.ad.image.url" />
-    </a>
-</div>
-...
+{% comment %}
+List generated via User.object.all().select_related("flavors")
+{% endcomment %}
+<h1>Ice Cream Fans and their favorite flavors.</h1>
+<ul>
+{% for user in user_list %}
+    <li>
+        {{ user.name }}:
+        {{ user.flavor.title }}
+        {{ user.flavor.scoops_remaining }}
+    </li>
+{% endfor %}
+</ul>

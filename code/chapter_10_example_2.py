@@ -23,18 +23,16 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# core/validators.py
-from django.core.exceptions import ValidationError
+# flavors/views.py
+from django.views.generic import DetailView
 
-def validate_tasty(value):
-    """Raise a ValidationError if the value doesn't start with the
-        word 'Tasty'.
-    """
-    if not value.startswith(u"Tasty"):
-        msg = u"Must start with Tasty"
-        raise ValidationError(msg)
+from braces.views import LoginRequiredMixin
 
+from .models import Flavor
+
+class FlavorDetailView(LoginRequiredMixin, DetailView):
+    model = Flavor

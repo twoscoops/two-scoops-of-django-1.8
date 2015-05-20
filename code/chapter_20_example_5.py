@@ -23,34 +23,33 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-import mock
-import unittest
+# profiles/models.py
 
-import icecreamapi
+from django.conf import settings
+from django.db import models
 
-from flavors.exceptions import CantListFlavors
-from flavors.utils import list_flavors_sorted
+from flavors.models import Flavor
 
-class TestIceCreamSorting(unittest.TestCase):
+class EaterProfile(models.Model):
 
-    # Set up monkeypatch of icecreamapi.get_flavors()
-    @mock.patch.object(icecreamapi, "get_flavors")
-    def test_flavor_sort(self, get_flavors):
-        # Instructs icecreamapi.get_flavors() to return an unordered list.
-        get_flavors.return_value = ['chocolate', 'vanilla', 'strawberry', ]
+    # Default user profile
+    # If you do this you need to either have a post_save signal or
+    #     redirect to a profile_edit view on initial login.
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    favorite_ice_cream = models.ForeignKey(Flavor, null=True, blank=True)
 
-        # list_flavors_sorted() calls the icecreamapi.get_flavors()
-        #   function. Since we've monkeypatched the function,  it will always
-        #   return ['chocolate', 'strawberry', 'vanilla', ]. Which the.
-        #   list_flavors_sorted() will sort alphabetically
-        flavors = list_flavors_sorted()
+class ScooperProfile(models.Model):
 
-        self.assertEqual(
-            flavors,
-            ['chocolate', 'strawberry', 'vanilla', ]
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    scoops_scooped = models.IntegerField(default=0)
 
-        )
+class InventorProfile(models.Model):
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    flavors_invented = models.ManyToManyField(Flavor, null=True, blank=True)
+
+

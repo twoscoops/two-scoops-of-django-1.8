@@ -23,30 +23,43 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# vouchers/managers.py
-from django.utils import timezone
+# flavors/views.py
+from django.contrib import messages
+from django.views.generic import CreateView, UpdateView, DetailView
 
-from dateutil.relativedelta import relativedelta
+from braces.views import LoginRequiredMixin
 
-from django.db import models
+from .models import Flavor
+from .forms import FlavorForm
 
-class VoucherManager(models.Manager):
-    def age_breakdown(self):
-        """Returns a dict of age brackets/counts."""
-        age_brackets = []
-        now = timezone.now()
+class FlavorActionMixin(object):
 
-        delta = now - relativedelta(years=18)
-        count = self.model.objects.filter(birth_date__gt=delta).count()
-        age_brackets.append(
-            {"title": "0-17", "count": count}
-        )
-        count = self.model.objects.filter(birth_date__lte=delta).count()
-        age_brackets.append(
-            {"title": "18+", "count": count}
-        )
-        return age_brackets
+    model = Flavor
+    fields = ('title', 'slug', 'scoops_remaining')
+
+    @property
+    def success_msg(self):
+        return NotImplemented
+
+    def form_valid(self, form):
+        messages.info(self.request, self.success_msg)
+        return super(FlavorActionMixin, self).form_valid(form)
+
+class FlavorCreateView(LoginRequiredMixin, FlavorActionMixin,
+                            CreateView):
+    success_msg = "created"
+    # Explicitly attach the FlavorForm class
+    form_class = FlavorForm
+
+class FlavorUpdateView(LoginRequiredMixin, FlavorActionMixin,
+                            UpdateView):
+    success_msg = "updated"
+    # Explicitly attach the FlavorForm class
+    form_class = FlavorForm
+
+class FlavorDetailView(DetailView):
+    model = Flavor

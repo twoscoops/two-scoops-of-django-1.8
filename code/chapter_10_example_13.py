@@ -23,22 +23,34 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# core/views.py
-class TitleSearchMixin(object):
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render, redirect
+from django.views.generic import View
 
-    def get_queryset(self):
-        # Fetch the queryset from the parent's get_queryset
-        queryset = super(TitleSearchMixin, self).get_queryset()
+from braces.views import LoginRequiredMixin
 
-        # Get the q GET parameter
-        q = self.request.GET.get("q")
-        if q:
-            # return a filtered queryset
-            return queryset.filter(title__icontains=q)
-        # No q is specified so we return queryset
-        return queryset
+from .forms import FlavorForm
+from .models import Flavor
+
+class FlavorView(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        # Handles display of the Flavor object
+        flavor = get_object_or_404(Flavor, slug=kwargs['slug'])
+        return render(request,
+            "flavors/flavor_detail.html",
+                {"flavor": flavor}
+            )
+
+    def post(self, request, *args, **kwargs):
+        # Handles updates of the Flavor object
+        flavor = get_object_or_404(Flavor, slug=kwargs['slug'])
+        form = FlavorForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("flavors:detail", flavor.slug)
 

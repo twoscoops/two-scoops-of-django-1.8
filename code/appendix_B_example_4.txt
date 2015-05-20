@@ -1,0 +1,2 @@
+C:\code\> virtualenv testenv
+C:\code\> testenv\Scripts\activate

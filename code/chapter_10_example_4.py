@@ -23,20 +23,19 @@ distributions. Examples:
 
 Attributions usually include the title, author, publisher and an ISBN. For
 example, "Two Scoops of Django: Best Practices for Django 1.8, by Daniel
-Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-GOES-HERE)."
+Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WILL-GO-HERE)."
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# flavors/models.py
-from django.core.urlresolvers import reverse
-from django.db import models
+from django.views.generic import CreateView
 
-from core.models import TastyTitleAbstractModel
+from braces.views import LoginRequiredMixin
 
-class Flavor(TastyTitleAbstractModel):
-    slug = models.SlugField()
-    scoops_remaining = models.IntegerField(default=0)
+from .models import Flavor
 
-    def get_absolute_url(self):
-        return reverse("flavors:detail", kwargs={"slug": self.slug})
+class FlavorCreateView(LoginRequiredMixin, CreateView):
+    model = Flavor
 
+    def form_invalid(self, form):
+        # Do custom logic here
+        return super(FlavorCreateView, self).form_invalid(form)
