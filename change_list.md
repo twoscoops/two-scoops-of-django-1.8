@@ -6,6 +6,13 @@
 
 * Chapter: Continuous Integration
   * Clearer explanation of CI workflow item 2, thanks to @bogdal (#79)
+* Chapter: Debugging
+  * Added IPDB and PDB packages
+* Appendix: Packages
+  * Added 
+* Appendix: Additional Resources
+  * Added new Python tutorial
+  * 
 * Grammar and typo fixes
 * Formatting corrections
 
