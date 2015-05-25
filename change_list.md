@@ -9,10 +9,9 @@
 * Chapter: Debugging
   * Added IPDB and PDB packages
 * Appendix: Packages
-  * Added 
+  * Added django-test-plus
 * Appendix: Additional Resources
   * Added new Python tutorial
-  * 
 * Grammar and typo fixes
 * Formatting corrections
 
