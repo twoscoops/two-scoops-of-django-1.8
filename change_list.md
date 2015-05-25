@@ -12,6 +12,7 @@
   * Added django-test-plus
 * Appendix: Additional Resources
   * Added new Python tutorial
+  * Added cdrf.co
 * Grammar and typo fixes
 * Formatting corrections
 
