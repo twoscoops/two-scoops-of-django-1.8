@@ -2,6 +2,13 @@
 
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
 
+## Two Scoops of Django 1.8 Change List Update #5
+
+* Chapter: Continuous Integration
+  * Clearer explanation of CI workflow item 2, thanks to @bogdal (#79)
+* Grammar and typo fixes
+* Formatting corrections
+
 ## Two Scoops of Django 1.8 Change List Update #4
 
 * Chapter: Coding Style
