@@ -6,6 +6,7 @@
 
 * Chapter: Security
   * Much better definition of zero-day attack, plus easy-to-understand examples. Thanks to @ludw (#80).
+  * Removed link to `code.google.com/p/browsersec/wiki/Main` as google code is going away and the document was the foundation for [The Tangled Web](http://amzn.to/1hXAAyx), which is also linked on the same page.
 * Chapter: Continuous Integration
   * Clearer explanation of CI workflow item 2, thanks to @bogdal (#79)
 * Chapter: Debugging
