@@ -10,6 +10,7 @@
   * Clearer explanation of CI workflow item 2, thanks to @bogdal (#79)
 * Chapter: Debugging
   * Added IPDB and PDB packages
+  * Added emphasis about removing email addresses in Mirroring Production section, thanks to @ludw (#81).
 * Appendix: Packages
   * Added django-test-plus
 * Appendix: Additional Resources
