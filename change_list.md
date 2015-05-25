@@ -4,6 +4,8 @@
 
 ## Two Scoops of Django 1.8 Change List Update #5
 
+* Chapter: Security
+  * Much better definition of zero-day attack, plus easy-to-understand examples. Thanks to @ludw (#80).
 * Chapter: Continuous Integration
   * Clearer explanation of CI workflow item 2, thanks to @bogdal (#79)
 * Chapter: Debugging
