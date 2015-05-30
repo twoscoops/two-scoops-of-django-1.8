@@ -2,7 +2,7 @@
 
 **Warning: This is a work in progress and may not match the current status of Two Scoops of Django 1.8.**
 
-## Two Scoops of Django 1.8 Change List Update #5
+## Two Scoops of Django 1.8 Change List Update #5 (final)
 
 * Chapter: Security
   * Much better definition of zero-day attack, plus easy-to-understand examples. Thanks to @ludw (#80).
