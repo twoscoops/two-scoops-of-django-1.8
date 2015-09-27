@@ -1,5 +1,6 @@
 # Two Scoops of Django 1.8 Change List
 
+http://twoscoopspress.com/products/two-scoops-of-django-1-8
 
 ## Two Scoops of Django 1.8 Change List Update #5 (final)
 
