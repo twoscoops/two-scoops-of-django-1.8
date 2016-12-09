@@ -29,9 +29,9 @@ If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
 from rest_framework import serializers
 
-from .models import flavor
+from .models import Flavor
 
 class FlavorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = flavor
+        model = Flavor
         fields = ('title', 'slug', 'scoops_remaining')
