@@ -32,7 +32,7 @@ from functools import wraps
 
 from . import utils
 
-# based off the decorator template from Example 8.5
+# based off the decorator template from Example 9.5
 def check_sprinkles(view_func):
     """Check if a user can add sprinkles"""
     @wraps(view_func)
