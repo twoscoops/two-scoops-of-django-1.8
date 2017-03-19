@@ -27,7 +27,7 @@ Roy Greenfeld and Audrey Roy Greenfeld. Copyright 2015 Two Scoops Press (ISBN-WI
 
 If you feel your use of code examples falls outside fair use of the permission
 given here, please contact us at info@twoscoopspress.org."""
-# Don't do this!
+# Instead, do this!
 from django.models import Q
 
 from promos.models import Promo
